@@ -1,16 +1,11 @@
-timeout: 240s
+timeout: "240s"
+serviceAccount: 552977366864-compute@developer.gserviceaccount.com
+logsBucket: gs://clgcporg6-p001_cloudbuild
 steps:
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - build
-      - '-t'
-      - us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app
-      - .
-    logsBucket: 'gs://clgcporg6-p001_cloudbuild'
-    serviceAccount: 552977366864-compute@developer.gserviceaccount.com
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - push
-      - us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app", "."]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app"]
 images:
-  - us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app
+  - "us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app"
+ 
