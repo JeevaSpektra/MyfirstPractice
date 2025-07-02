@@ -1,5 +1,5 @@
 steps:
-  - name: "us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/sample-app:latest"
+  - name: "us-central1-docker.pkg.dev/clgcporg13-001/my-repo/sample-app:latest"
     args: ["echo", "Testing Cloud Build Trigger with prebuilt image"]
 serviceAccount: 1000654498874-compute@developer.gserviceaccount.com
 logsBucket: gs://clgcporg13-001_cloudbuild
